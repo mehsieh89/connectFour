@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
@@ -14,4 +15,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    board: state.board,
+  };
+};
+
+const matchDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, matchDispatchToProps)(App);
