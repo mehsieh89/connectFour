@@ -6,6 +6,7 @@ let board = [
   [0, 1, 1, 1, 0, 1, 0],
   [0, 0, 1, 0, 0, 1, 0]
 ];
+
 //checks a row
 function rowCheck(row) {
   let tracker = {
@@ -125,7 +126,7 @@ function diagRightCheck(board) {
   let columnIndex = 6;
   let rowIndex = 2;
   let output;
-  
+
   for (let i = 0; i < 6; i++) {
     function diagonalConversion(rowPos, colPos) {
       let arrayToCheck = [];
