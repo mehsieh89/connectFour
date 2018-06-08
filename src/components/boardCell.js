@@ -8,10 +8,18 @@ class BoardCell extends Component {
 
   handleOnclick(event) {
     let position = this.props.data;
+    let chipColor = "red";
+    if (!this.props.currentPlayer) {
+      chipColor = "black"
+    }
     this.props.dropChip(position.row, position.col, "red");
   }
 
   render() {
+    let indexes = this.props.data;
+    if (this.props.board[indexes.row][indexes.col] === "red") {
+
+    }
     return (
       <div
         id="cell"

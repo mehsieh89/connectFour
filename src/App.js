@@ -14,6 +14,7 @@ class App extends Component {
         </header>
         <Board
           board={this.props.board.board}
+          currentPlayer={this.props.board.currentPlayer}
           dropChip={this.props.dropChip}
         />
       </div>

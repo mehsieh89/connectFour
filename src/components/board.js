@@ -15,6 +15,8 @@ class Board extends Component {
             return row.map((col, colIndex) => {
               return (
                 <BoardCell
+                  board={this.props.board}
+                  currentPlayer={this.props.currentPlayer}
                   dropChip={this.props.dropChip}
                   key={Date.now() + colIndex}
                   data={{row: rowIndex, col: colIndex}}
