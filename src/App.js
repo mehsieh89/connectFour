@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Board from './components/board.js';
+import { dropChip } from './actions.js';
 import './App.css';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         </header>
         <Board
           board={this.props.board.board}
+          dropChip={this.props.dropChip}
         />
       </div>
     );
@@ -27,6 +29,7 @@ const mapStateToProps = (state) => {
 
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({
+    dropChip: dropChip
   }, dispatch);
 };
 
