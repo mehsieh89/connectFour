@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: grey;
+  background-color: #0198E1;
   height: 100px;
   width: 100px;
   float: left;
@@ -42,8 +42,16 @@
   border-radius: 50%;
 }
 
-#chip {
-  background-color: red;
+#chipRed {
+  background-color: #e50000;
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+#chipYellow {
+  background-color: #ffd500;
   height: 70px;
   width: 70px;
   margin: 0 auto;

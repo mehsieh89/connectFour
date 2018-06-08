@@ -32,6 +32,9 @@ export default function(state = initialState, action) {
   case 'INCREMENT_CHIP_COUNT':
     return Object.assign({}, state, { chipCount: state.chipCount++});
 
+  case 'TOGGLE_PLAYER':
+    return Object.assign({}, state, { currentPlayer: !state.currentPlayer});
+
   default:
     return state;
   }

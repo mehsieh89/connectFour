@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import BoardCell from './boardCell.js';
 
 class Board extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     let board = this.props.board
@@ -18,6 +15,7 @@ class Board extends Component {
                   chipCount={this.props.chipCount}
                   incrementChipCount={this.props.incrementChipCount}
                   board={this.props.board}
+                  togglePlayer={this.props.togglePlayer}
                   recentChip={this.props.recentChip}
                   currentPlayer={this.props.currentPlayer}
                   dropChip={this.props.dropChip}

@@ -11,20 +11,20 @@ let board = [
 function rowCheck(row) {
   let tracker = {
     red: 0,
-    black: 0
+    yellow: 0
   };
   for (let k = 0; k < row.length; k++) {
     if (row[k] === 0) {
       tracker.red++;
-      tracker.black = 0;
+      tracker.yellow = 0;
       if (tracker.red === 4) {
         return "red is the winner";
       }
     } else if (row[k] === 1){
-      tracker.black++;
+      tracker.yellow++;
       tracker.red = 0;
-      if (tracker.black === 4) {
-        return "black is the winner";
+      if (tracker.yellow === 4) {
+        return "yellow is the winner";
       }
     }
   }
@@ -44,20 +44,20 @@ function colCheck(board) {
   for (let k = 0; k < board[0].length; k++) {
     let tracker = {
       red: 0,
-      black: 0
+      yellow: 0
     };
     for (let i = 0; i < board.length; i++) {
       if (board[i][columnIndex] === 0) {
         tracker.red++;
-        tracker.black = 0;
+        tracker.yellow = 0;
         if (tracker.red === 4) {
           return "red is the winner";
         }
       } else if (board[i][columnIndex] === 1) {
-        tracker.black++;
+        tracker.yellow++;
         tracker.red = 0;
-        if (tracker.black === 4) {
-          return "black is the winner";
+        if (tracker.yellow === 4) {
+          return "yellow is the winner";
         }
       }
     }
@@ -68,20 +68,20 @@ function colCheck(board) {
 function rowCheck(row) {
   let tracker = {
     red: 0,
-    black: 0
+    yellow: 0
   };
   for (let k = 0; k < row.length; k++) {
     if (row[k] === 0) {
       tracker.red++;
-      tracker.black = 0;
+      tracker.yellow = 0;
       if (tracker.red === 4) {
         return "red is the winner";
       }
     } else if (row[k] === 1){
-      tracker.black++;
+      tracker.yellow++;
       tracker.red = 0;
-      if (tracker.black === 4) {
-        return "black is the winner";
+      if (tracker.yellow === 4) {
+        return "yellow is the winner";
       }
     }
   }

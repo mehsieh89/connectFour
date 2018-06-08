@@ -12,3 +12,9 @@ export const incrementChipCount = () => {
     type: 'INCREMENT_CHIP_COUNT',
   };
 };
+
+export const togglePlayer = () => {
+  return {
+    type: 'TOGGLE_PLAYER',
+  };
+};
