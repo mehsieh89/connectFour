@@ -12,8 +12,15 @@ class BoardCell extends Component {
     if (!this.props.currentPlayer) {
       chipColor = "yellow"
     }
-    this.props.dropChip(position.row, position.col, chipColor);
-    this.props.togglePlayer();
+    let check = "col" + position.col;
+    this.props.incrementColIndex(check);
+    if (this.props.colTracker[check] < 7) {
+      this.props.dropChip(position.row, position.col, chipColor);
+      this.props.togglePlayer();
+    } else {
+      this.props.changeRecentChip();
+      alert('invalid move!');
+    }
     // this.props.incrementChipCount();
   }
 
