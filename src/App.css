@@ -34,8 +34,16 @@
   width: 700px;
 }
 
-#circle{
+#circle {
   background-color: white;
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+#chip {
+  background-color: red;
   height: 70px;
   width: 70px;
   margin: 0 auto;

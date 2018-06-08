@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Board from './components/board.js';
-import { dropChip } from './actions.js';
+import { dropChip, incrementChipCount } from './actions.js';
 import './App.css';
 
 class App extends Component {
@@ -14,8 +14,11 @@ class App extends Component {
         </header>
         <Board
           board={this.props.board.board}
+          chipCount={this.props.board.chipCount}
+          recentChip={this.props.board.recentChip}
           currentPlayer={this.props.board.currentPlayer}
           dropChip={this.props.dropChip}
+          incrementChipCount={this.props.incrementChipCount}
         />
       </div>
     );
@@ -25,12 +28,15 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     board: state.board,
+    chipCount: state.chipCount,
+    recentChip: state.recentChip
   };
 };
 
 const matchDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    dropChip: dropChip
+    dropChip: dropChip,
+    incrementChipCount: incrementChipCount
   }, dispatch);
 };
 

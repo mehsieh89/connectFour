@@ -15,7 +15,10 @@ class Board extends Component {
             return row.map((col, colIndex) => {
               return (
                 <BoardCell
+                  chipCount={this.props.chipCount}
+                  incrementChipCount={this.props.incrementChipCount}
                   board={this.props.board}
+                  recentChip={this.props.recentChip}
                   currentPlayer={this.props.currentPlayer}
                   dropChip={this.props.dropChip}
                   key={Date.now() + colIndex}

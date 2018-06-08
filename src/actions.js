@@ -6,3 +6,9 @@ export const dropChip = (rowIndex, colIndex, color) => {
     color: color
   };
 };
+
+export const incrementChipCount = () => {
+  return {
+    type: 'INCREMENT_CHIP_COUNT',
+  };
+};
