@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Board from './components/board.js';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <h1 className="App-title">Connect Four</h1>
         </header>
+        <Board
+          board={this.props.board.board}
+        />
       </div>
     );
   }
