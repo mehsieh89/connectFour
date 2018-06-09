@@ -26,10 +26,6 @@ class App extends Component {
     this.setState({
       open: true
     })
-    // let firstPlayer = prompt('player 1 name');
-    // let secondPlayer = prompt('player 2 name');
-    // this.props.addFirstPlayer(firstPlayer);
-    // this.props.addSecondPlayer(secondPlayer);
   }
 
   handleChange = (event) => {
@@ -45,15 +41,29 @@ class App extends Component {
   }
 
   handleClose = () => {
-    
-    this.setState({ open: false });
+    if (this.state.playerOne !== null && this.state.playerTwo !== null) {
+      this.props.addFirstPlayer(this.state.playerOne);
+      this.props.addSecondPlayer(this.state.playerTwo);
+      this.setState({ open: false });
+    }
   };
 
   render() {
+
+    const playerCheck = () => {
+      if (this.props.board.firstPlayer !== null && this.props.board.secondPlayer !== null) {
+        if (this.props.board.currentPlayer) {
+          return <h2 className="Player-Turn">Player Turn: {this.props.board.firstPlayer}</h2>
+        } else {
+          return <h2 className="Player-Turn">Player Turn: {this.props.board.secondPlayer}</h2>
+        }
+      }
+    }
     return (
       <div>
         <header className="App-header">
           <h1 className="App-title">Connect Four</h1>
+          {playerCheck()}
         </header>
         <Dialog
           open={this.state.open}
@@ -111,6 +121,7 @@ const mapStateToProps = (state) => {
   return {
     board: state.board,
     chipCount: state.chipCount,
+    currentPlayer: state.currentPlayer,
     recentChip: state.recentChip,
     firstPlayer: state.firstPlayer,
     secondPlayer: state.secondPlayer,

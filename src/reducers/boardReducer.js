@@ -60,7 +60,7 @@ export default function(state = initialState, action) {
 
   case 'ADD_SECOND_PLAYER' :
     let newState3 = Object.assign({}, state);
-    newState3.firstPlayer = action.payload;
+    newState3.secondPlayer = action.payload;
     return newState3;
 
   case 'INCREMENT_COL_INDEX':
