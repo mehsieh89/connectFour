@@ -5,8 +5,7 @@ class Board extends Component {
   constructor(props) {
     super(props)
   }
-  componentDidUpdate() {
-    console.log(this.props.colTracker);
+  componentDidUpdate = () => {
     let rowWin = this.checkAllRows(this.props.board);
     let colWin = this.colCheck(this.props.board);
     let diagLWin = this.diagLeftCheck(this.props.board);
@@ -22,7 +21,7 @@ class Board extends Component {
     }
   }
 
-  rowCheck(row) {
+  rowCheck = (row) => {
     let tracker = {
       red: 0,
       yellow: 0
@@ -47,7 +46,7 @@ class Board extends Component {
     }
   }
 
-  checkAllRows(board) {
+  checkAllRows = (board) => {
     for (let i = 0; i < board.length; i++) {
       let check = this.rowCheck(board[i]);
       if (check !== undefined) {
@@ -56,7 +55,7 @@ class Board extends Component {
     }
   }
 
-  colCheck(board) {
+  colCheck = (board) => {
     let columnIndex = 0;
     for (let k = 0; k < board[0].length; k++) {
       let tracker = {
@@ -85,7 +84,7 @@ class Board extends Component {
     }
   }
 
-  diagLeftCheck(board) {
+  diagLeftCheck = (board) => {
     let columnIndex = 0;
     let rowIndex = 2;
     let that = this;
@@ -120,7 +119,7 @@ class Board extends Component {
     return output;
   }
 
-  diagRightCheck(board) {
+  diagRightCheck = (board) => {
     let columnIndex = 6;
     let rowIndex = 2;
     let that = this;

@@ -6,7 +6,7 @@ class BoardCell extends Component {
     this.handleOnclick = this.handleOnclick.bind(this);
   }
 
-  handleOnclick(event) {
+  handleOnclick = (event) => {
     let position = this.props.data;
     let chipColor = "red";
     if (!this.props.currentPlayer) {
