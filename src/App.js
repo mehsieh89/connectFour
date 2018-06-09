@@ -51,11 +51,12 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props.board.results);
     const resultsCheck = () => {
       if (this.props.board.results !== null) {
         return  (<ResultsDialog
                   results={this.props.board.results}
+                  firstPlayer={this.props.board.firstPlayer}
+                  secondPlayer={this.props.board.secondPlayer}
                 />)
       } else {
         return null;
@@ -123,6 +124,7 @@ class App extends Component {
           currentPlayer={this.props.board.currentPlayer}
           dropChip={this.props.dropChip}
           incrementChipCount={this.props.incrementChipCount}
+
           results={this.props.board.results}
           addResults={this.props.addResults}
         />

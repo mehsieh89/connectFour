@@ -17,13 +17,13 @@ class Board extends Component {
         tracker.red++;
         tracker.yellow = 0;
         if (tracker.red === 4) {
-          return "red is the winner";
+          return "firstPlayer";
         }
       } else if (row[k] === "yellow"){
         tracker.yellow++;
         tracker.red = 0;
         if (tracker.yellow === 4) {
-          return "yellow is the winner";
+          return "secondPlayer";
         }
       } else if (row[k] === null) {
         tracker.yellow = 0;
@@ -53,13 +53,13 @@ class Board extends Component {
           tracker.red++;
           tracker.yellow = 0;
           if (tracker.red === 4) {
-            return "red is the winner";
+            return "firstPlayer";
           }
         } else if (board[i][columnIndex] === "yellow") {
           tracker.yellow++;
           tracker.red = 0;
           if (tracker.yellow === 4) {
-            return "yellow is the winner";
+            return "secondPlayer";
           }
         } else if (board[i][columnIndex] === null) {
           tracker.yellow = 0;
