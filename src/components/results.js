@@ -20,19 +20,16 @@ class ResultsDialog extends Component {
     })
   }
 
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
   handleRestart = () => {
-
+    window.location.reload();
+    this.setState({ open: false });
   }
 
   render() {
     return (
       <Dialog
         open={this.state.open}
-        onClose={this.handleClose}
+        onClose={this.handleRestart}
       >
         <DialogTitle id="form-dialog-title">Results</DialogTitle>
         <DialogContent>
