@@ -18,6 +18,14 @@
   font-size: large;
 }
 
+.Player-Turn {
+  color: #e50000;
+}
+
+.Player2-Turn {
+  color: #ffd500;
+}
+
 #cell {
   display: flex;
   flex-direction: column;

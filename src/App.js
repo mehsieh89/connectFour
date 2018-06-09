@@ -55,7 +55,7 @@ class App extends Component {
         if (this.props.board.currentPlayer) {
           return <h2 className="Player-Turn">Player Turn: {this.props.board.firstPlayer}</h2>
         } else {
-          return <h2 className="Player-Turn">Player Turn: {this.props.board.secondPlayer}</h2>
+          return <h2 className="Player2-Turn">Player Turn: {this.props.board.secondPlayer}</h2>
         }
       }
     }
