@@ -10,7 +10,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { dropChip, incrementChipCount, togglePlayer, addFirstPlayer,
-  addSecondPlayer, incrementColIndex, changeRecentChip } from './actions.js';
+  addSecondPlayer, incrementColIndex, changeRecentChip, addResults } from './actions.js';
 import './App.css';
 
 class App extends Component {
@@ -22,6 +22,7 @@ class App extends Component {
       playerTwo: null
     }
   }
+  
   componentDidMount = () => {
     this.setState({
       open: true
@@ -111,6 +112,8 @@ class App extends Component {
           currentPlayer={this.props.board.currentPlayer}
           dropChip={this.props.dropChip}
           incrementChipCount={this.props.incrementChipCount}
+          results={this.props.board.results}
+          addResults={this.props.addResults}
         />
       </div>
     );
@@ -125,7 +128,8 @@ const mapStateToProps = (state) => {
     recentChip: state.recentChip,
     firstPlayer: state.firstPlayer,
     secondPlayer: state.secondPlayer,
-    colTracker: state.colTracker
+    colTracker: state.colTracker,
+    results: state.results
   };
 };
 
@@ -137,7 +141,8 @@ const matchDispatchToProps = (dispatch) => {
     addFirstPlayer: addFirstPlayer,
     addSecondPlayer: addSecondPlayer,
     incrementColIndex: incrementColIndex,
-    changeRecentChip: changeRecentChip
+    changeRecentChip: changeRecentChip,
+    addResults: addResults
   }, dispatch);
 };
 

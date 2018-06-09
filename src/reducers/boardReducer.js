@@ -24,7 +24,8 @@ const initialState = {
     col5: 0,
     col6: 0,
     col7: 0
-  }
+  },
+  results: null
 };
 
 export default function(state = initialState, action) {
@@ -67,6 +68,13 @@ export default function(state = initialState, action) {
     let newState4 = Object.assign({}, state);
     newState4.colTracker[action.payload]++;
     return newState4;
+
+  case 'ADD_RESULTS' :
+    let newState6 = Object.assign({}, state);
+    if (action.payload !== undefined) {
+      newState6.results = action.payload;
+    }
+    return newState6;
 
   default:
     return state;

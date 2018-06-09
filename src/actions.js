@@ -45,3 +45,10 @@ export const incrementColIndex = (colIndex) => {
     payload: colIndex
   };
 };
+
+export const addResults = (results) => {
+  return {
+    type: 'ADD_RESULTS',
+    payload: results
+  };
+};

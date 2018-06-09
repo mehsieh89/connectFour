@@ -10,14 +10,15 @@ class Board extends Component {
     let colWin = this.colCheck(this.props.board);
     let diagLWin = this.diagLeftCheck(this.props.board);
     let diagRWin = this.diagRightCheck(this.props.board);
+    
     if (rowWin !== undefined) {
-      alert(rowWin);
+      this.props.addResults(rowWin);
     } else if (colWin !== undefined) {
-      alert(colWin);
+      this.props.addResults(colWin);
     } else if (diagLWin !== undefined) {
-      alert(diagLWin);
+      this.props.addResults(diagLWin);
     } else if (diagRWin !== undefined) {
-      alert(diagRWin);
+      this.props.addResults(diagRWin);
     }
   }
 
