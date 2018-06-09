@@ -2,22 +2,10 @@ import React, { Component } from 'react';
 import BoardCell from './boardCell.js';
 
 class Board extends Component {
-  // componentDidUpdate = () => {
-  //   // let rowWin = this.checkAllRows(this.props.board);
-  //   // let colWin = this.colCheck(this.props.board);
-  //   // let diagLWin = this.diagLeftCheck(this.props.board);
-  //   // let diagRWin = this.diagRightCheck(this.props.board);
-  //   //
-  //   // if (rowWin !== undefined) {
-  //   //   this.props.addResults(rowWin);
-  //   // } else if (colWin !== undefined) {
-  //   //   this.props.addResults(colWin);
-  //   // } else if (diagLWin !== undefined) {
-  //   //   this.props.addResults(diagLWin);
-  //   // } else if (diagRWin !== undefined) {
-  //   //   this.props.addResults(diagRWin);
-  //   // }
-  // }
+  constructor(props) {
+    super(props)
+    this.rowCheck = this.rowCheck.bind(this);
+  }
 
   rowCheck = (row) => {
     let tracker = {
@@ -168,7 +156,7 @@ class Board extends Component {
                   colTracker={this.props.colTracker}
                   board={this.props.board}
                   addResults={this.props.addResults}
-                  checkAllRows={this.rowCheck}
+                  checkAllRows={this.checkAllRows}
                   colCheck={this.colCheck}
                   diagLeftCheck={this.diagLeftCheck}
                   diagRightCheck={this.diagRightCheck}

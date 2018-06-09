@@ -51,6 +51,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props.board.results);
     const resultsCheck = () => {
       if (this.props.board.results !== null) {
         return  (<ResultsDialog
