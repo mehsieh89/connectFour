@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -16,16 +15,18 @@ class ResultsDialog extends Component {
   }
 
   componentDidMount = () => {
-    if (this.props.results !== undefined) {
-      this.setState({
-        open: true
-      })
-    }
+    this.setState({
+      open: true
+    })
   }
 
   handleClose = () => {
     this.setState({ open: false });
   };
+
+  handleRestart = () => {
+
+  }
 
   render() {
     return (
@@ -40,7 +41,7 @@ class ResultsDialog extends Component {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
+          <Button onClick={this.handleRestart} color="primary">
             Play Again?
           </Button>
         </DialogActions>

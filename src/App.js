@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Board from './components/board.js';
+import ResultsDialog from './components/results.js';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -22,7 +23,7 @@ class App extends Component {
       playerTwo: null
     }
   }
-  
+
   componentDidMount = () => {
     this.setState({
       open: true
@@ -50,7 +51,15 @@ class App extends Component {
   };
 
   render() {
-
+    const resultsCheck = () => {
+      if (this.props.board.results !== null) {
+        return  (<ResultsDialog
+                  results={this.props.board.results}
+                />)
+      } else {
+        return null;
+      }
+    }
     const playerCheck = () => {
       if (this.props.board.firstPlayer !== null && this.props.board.secondPlayer !== null) {
         if (this.props.board.currentPlayer) {
@@ -101,6 +110,7 @@ class App extends Component {
             </Button>
           </DialogActions>
         </Dialog>
+        {resultsCheck()}
         <Board
           board={this.props.board.board}
           chipCount={this.props.board.chipCount}

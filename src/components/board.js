@@ -2,25 +2,22 @@ import React, { Component } from 'react';
 import BoardCell from './boardCell.js';
 
 class Board extends Component {
-  constructor(props) {
-    super(props)
-  }
-  componentDidUpdate = () => {
-    let rowWin = this.checkAllRows(this.props.board);
-    let colWin = this.colCheck(this.props.board);
-    let diagLWin = this.diagLeftCheck(this.props.board);
-    let diagRWin = this.diagRightCheck(this.props.board);
-    
-    if (rowWin !== undefined) {
-      this.props.addResults(rowWin);
-    } else if (colWin !== undefined) {
-      this.props.addResults(colWin);
-    } else if (diagLWin !== undefined) {
-      this.props.addResults(diagLWin);
-    } else if (diagRWin !== undefined) {
-      this.props.addResults(diagRWin);
-    }
-  }
+  // componentDidUpdate = () => {
+  //   // let rowWin = this.checkAllRows(this.props.board);
+  //   // let colWin = this.colCheck(this.props.board);
+  //   // let diagLWin = this.diagLeftCheck(this.props.board);
+  //   // let diagRWin = this.diagRightCheck(this.props.board);
+  //   //
+  //   // if (rowWin !== undefined) {
+  //   //   this.props.addResults(rowWin);
+  //   // } else if (colWin !== undefined) {
+  //   //   this.props.addResults(colWin);
+  //   // } else if (diagLWin !== undefined) {
+  //   //   this.props.addResults(diagLWin);
+  //   // } else if (diagRWin !== undefined) {
+  //   //   this.props.addResults(diagRWin);
+  //   // }
+  // }
 
   rowCheck = (row) => {
     let tracker = {
@@ -92,29 +89,29 @@ class Board extends Component {
     let output;
 
     for (let i = 0; i < 6; i++) {
-      function diagonalConversion(rowPos, colPos) {
-        let arrayToCheck = [];
-        while(board[rowPos] !== undefined) {
-          if (board[rowPos][colPos] === undefined) {
-            rowPos++;
-            colPos++;
-            continue;
-          } else {
-            arrayToCheck.push(board[rowPos][colPos]);
-            rowPos++;
-            colPos++;
-          }
-        }
-        if (output === undefined) {
-          output = that.rowCheck(arrayToCheck);
-        }
-      }
       diagonalConversion(rowIndex, columnIndex);
       if (rowIndex !== 0) {
         rowIndex--;
       }
-       if (rowIndex === 0) {
+      if (rowIndex === 0) {
         columnIndex++;
+      }
+    }
+    function diagonalConversion(rowPos, colPos) {
+      let arrayToCheck = [];
+      while(board[rowPos] !== undefined) {
+        if (board[rowPos][colPos] === undefined) {
+          rowPos++;
+          colPos++;
+          continue;
+        } else {
+          arrayToCheck.push(board[rowPos][colPos]);
+          rowPos++;
+          colPos++;
+        }
+      }
+      if (output === undefined) {
+        output = that.rowCheck(arrayToCheck);
       }
     }
     return output;
@@ -127,29 +124,29 @@ class Board extends Component {
     let output;
 
     for (let i = 0; i < 6; i++) {
-      function diagonalConversion(rowPos, colPos) {
-        let arrayToCheck = [];
-        while(board[rowPos] !== undefined) {
-          if (board[rowPos][colPos] === undefined) {
-            rowPos++;
-            colPos--;
-            continue;
-          } else {
-            arrayToCheck.push(board[rowPos][colPos]);
-            rowPos++;
-            colPos--;
-          }
-        }
-        if (output === undefined) {
-          output = that.rowCheck(arrayToCheck);
-        }
-      }
       diagonalConversion(rowIndex, columnIndex);
       if (rowIndex !== 0) {
         rowIndex--;
       }
       if (rowIndex === 0) {
         columnIndex--;
+      }
+    }
+    function diagonalConversion(rowPos, colPos) {
+      let arrayToCheck = [];
+      while(board[rowPos] !== undefined) {
+        if (board[rowPos][colPos] === undefined) {
+          rowPos++;
+          colPos--;
+          continue;
+        } else {
+          arrayToCheck.push(board[rowPos][colPos]);
+          rowPos++;
+          colPos--;
+        }
+      }
+      if (output === undefined) {
+        output = that.rowCheck(arrayToCheck);
       }
     }
     return output;
@@ -170,6 +167,11 @@ class Board extends Component {
                   incrementChipCount={this.props.incrementChipCount}
                   colTracker={this.props.colTracker}
                   board={this.props.board}
+                  addResults={this.props.addResults}
+                  checkAllRows={this.rowCheck}
+                  colCheck={this.colCheck}
+                  diagLeftCheck={this.diagLeftCheck}
+                  diagRightCheck={this.diagRightCheck}
                   togglePlayer={this.props.togglePlayer}
                   recentChip={this.props.recentChip}
                   changeRecentChip={this.props.changeRecentChip}

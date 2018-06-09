@@ -21,7 +21,20 @@ class BoardCell extends Component {
       this.props.changeRecentChip();
       alert('invalid move!');
     }
-    // this.props.incrementChipCount();
+    let rowWin = this.props.checkAllRows(this.props.board);
+    let colWin = this.props.colCheck(this.props.board);
+    let diagLWin = this.props.diagLeftCheck(this.props.board);
+    let diagRWin = this.props.diagRightCheck(this.props.board);
+
+    if (rowWin !== undefined) {
+      this.props.addResults(rowWin);
+    } else if (colWin !== undefined) {
+      this.props.addResults(colWin);
+    } else if (diagLWin !== undefined) {
+      this.props.addResults(diagLWin);
+    } else if (diagRWin !== undefined) {
+      this.props.addResults(diagRWin);
+    }
   }
 
   render() {
