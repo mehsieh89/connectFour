@@ -3,11 +3,13 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #00a0b0;
   height: 100px;
   padding: 20px;
   text-align: center;
   color: white;
+  border-bottom: 3px solid;
+  border-bottom-color: rgba(255, 255, 255, .7);
 }
 
 .App-title {
@@ -19,18 +21,18 @@
 }
 
 .Player-Turn {
-  color: #e50000;
+  color: #f92f31;
 }
 
 .Player2-Turn {
-  color: #ffd500;
+  color: #ffb900;
 }
 
 #cell {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #0198E1;
+  background-color: #3786f9;
   height: 100px;
   width: 100px;
   float: left;
@@ -39,6 +41,7 @@
 
 .board {
   margin: 0 auto;
+  margin-top: 20px;
   width: 700px;
 }
 
@@ -51,7 +54,7 @@
 }
 
 #chipRed {
-  background-color: #e50000;
+  background-color: #f92f31;
   height: 70px;
   width: 70px;
   margin: 0 auto;
@@ -59,7 +62,7 @@
 }
 
 #chipYellow {
-  background-color: #ffd500;
+  background-color: #ffb900;
   height: 70px;
   width: 70px;
   margin: 0 auto;
