@@ -78,25 +78,19 @@ class Board extends Component {
 
     for (let i = 0; i < 6; i++) {
       diagonalConversion(rowIndex, columnIndex);
-      if (rowIndex !== 0) {
+      if (rowIndex > 0) {
         rowIndex--;
       }
-      if (rowIndex === 0) {
+      if (i > 2) {
         columnIndex++;
       }
     }
     function diagonalConversion(rowPos, colPos) {
       let arrayToCheck = [];
-      while(board[rowPos] !== undefined) {
-        if (board[rowPos][colPos] === undefined) {
-          rowPos++;
-          colPos++;
-          continue;
-        } else {
-          arrayToCheck.push(board[rowPos][colPos]);
-          rowPos++;
-          colPos++;
-        }
+      while(rowPos < 6 && colPos < 7) {
+        arrayToCheck.push(board[rowPos][colPos]);
+        rowPos++;
+        colPos++;
       }
       if (output === undefined) {
         output = that.rowCheck(arrayToCheck);
@@ -116,22 +110,16 @@ class Board extends Component {
       if (rowIndex !== 0) {
         rowIndex--;
       }
-      if (rowIndex === 0) {
+      if (i > 2) {
         columnIndex--;
       }
     }
     function diagonalConversion(rowPos, colPos) {
       let arrayToCheck = [];
-      while(board[rowPos] !== undefined) {
-        if (board[rowPos][colPos] === undefined) {
-          rowPos++;
-          colPos--;
-          continue;
-        } else {
-          arrayToCheck.push(board[rowPos][colPos]);
-          rowPos++;
-          colPos--;
-        }
+      while(rowPos < 6 && colPos < 7) {
+        arrayToCheck.push(board[rowPos][colPos]);
+        rowPos++;
+        colPos--;
       }
       if (output === undefined) {
         output = that.rowCheck(arrayToCheck);
