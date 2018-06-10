@@ -6,6 +6,29 @@ class BoardCell extends Component {
     this.handleOnclick = this.handleOnclick.bind(this);
   }
 
+  handleResultsCheck = () => {
+    let rowWin = this.props.checkAllRows(this.props.board);
+    let colWin = this.props.colCheck(this.props.board);
+    let diagLWin = this.props.diagLeftCheck(this.props.board);
+    let diagRWin = this.props.diagRightCheck(this.props.board);
+
+    if (rowWin !== undefined) {
+      this.props.addResults(rowWin);
+      return true;
+    } else if (colWin !== undefined) {
+      this.props.addResults(colWin);
+      return true;
+    } else if (diagLWin !== undefined) {
+      this.props.addResults(diagLWin)
+      return true;
+    } else if (diagRWin !== undefined) {
+      this.props.addResults(diagRWin);
+      return true;
+    }else {
+      return false;
+    }
+  }
+
   handleOnclick = (event) => {
     let position = this.props.data;
     let chipColor = "red";
@@ -16,24 +39,12 @@ class BoardCell extends Component {
     this.props.incrementColIndex(check);
     if (this.props.colTracker[check] < 7) {
       this.props.dropChip(position.row, position.col, chipColor);
-      this.props.togglePlayer();
+      if (!this.handleResultsCheck()) {
+        this.props.togglePlayer();
+      }
     } else {
       this.props.changeRecentChip();
       alert('invalid move!');
-    }
-    let rowWin = this.props.checkAllRows(this.props.board);
-    let colWin = this.props.colCheck(this.props.board);
-    let diagLWin = this.props.diagLeftCheck(this.props.board);
-    let diagRWin = this.props.diagRightCheck(this.props.board);
-
-    if (rowWin !== undefined) {
-      this.props.addResults(rowWin);
-    } else if (colWin !== undefined) {
-      this.props.addResults(colWin);
-    } else if (diagLWin !== undefined) {
-      this.props.addResults(diagLWin);
-    } else if (diagRWin !== undefined) {
-      this.props.addResults(diagRWin);
     }
   }
 
