@@ -62,15 +62,16 @@ class BoardCell extends Component {
     let chip = <div id="circle"></div>;
 
     if (this.props.board[indexes.row][indexes.col] !== null && check()) {
+      let animationRow = "animated slideInDown" + indexes.row;
       if (this.props.board[indexes.row][indexes.col] === "red") {
         chip =
         <div id="circle">
-          <div className="animated slideInDown" id="chipRed"></div>
+          <div className={animationRow} id="chipRed"></div>
         </div>
       } else {
         chip =
         <div id="circle">
-          <div className="animated slideInDown" id="chipYellow"></div>
+          <div className={animationRow} id="chipYellow"></div>
         </div>
       }
     } else if (this.props.board[indexes.row][indexes.col] !== null) {

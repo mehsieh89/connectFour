@@ -7,10 +7,6 @@ class Board extends Component {
     this.rowCheck = this.rowCheck.bind(this);
   }
 
-  componentDidUpdate = () => {
-    console.log(this.props.chipCount);
-  }
-
   rowCheck = (row) => {
     let tracker = {
       red: 0,

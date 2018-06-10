@@ -68,3 +68,91 @@
   margin: 0 auto;
   border-radius: 50%;
 }
+
+.slideInDown5 {
+  animation-name: slideInDown5;
+  animation-duration: 1s;
+}
+
+@keyframes slideInDown5 {
+  from {
+    transform: translate3d(0, -520px, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInDown4 {
+  animation-name: slideInDown4;
+  animation-duration: .85s;
+}
+
+@keyframes slideInDown4 {
+  from {
+    transform: translate3d(0, -420px, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.slideInDown3 {
+  animation-name: slideInDown3;
+  animation-duration: .7s;
+}
+
+@keyframes slideInDown3 {
+  from {
+    transform: translate3d(0, -320px, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown2 {
+  animation-name: slideInDown2;
+  animation-duration: .55s;
+}
+
+@keyframes slideInDown2 {
+  from {
+    transform: translate3d(0, -220px, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown1 {
+  animation-name: slideInDown1;
+  animation-duration: .40s;
+}
+
+@keyframes slideInDown1 {
+  from {
+    transform: translate3d(0, -120px, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown0 {
+  animation-name: slideInDown0;
+  animation-duration: .25s;
+}
+
+@keyframes slideInDown0 {
+  from {
+    transform: translate3d(0, -20px, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
