@@ -66,18 +66,19 @@ class App extends Component {
     const playerCheck = () => {
       if (this.props.board.firstPlayer !== null && this.props.board.secondPlayer !== null) {
         if (this.props.board.currentPlayer) {
-          return <h2 className="Player-Turn">Player Turn: {this.props.board.firstPlayer}</h2>
+          return <h3 className="Player-Turn">{this.props.board.firstPlayer}</h3>
         } else {
-          return <h2 className="Player2-Turn">Player Turn: {this.props.board.secondPlayer}</h2>
+          return <h3 className="Player2-Turn">{this.props.board.secondPlayer}</h3>
         }
       }
     }
     return (
       <div>
-        <header className="App-header">
+        <div className="App-sideBar">
           <h1 className="App-title">Connect Four</h1>
+          <p>Player Turn:</p>
           {playerCheck()}
-        </header>
+        </div>
         <Dialog
           open={this.state.open}
         >
@@ -114,20 +115,22 @@ class App extends Component {
           </DialogActions>
         </Dialog>
         {resultsCheck()}
-        <Board
-          board={this.props.board.board}
-          chipCount={this.props.board.chipCount}
-          togglePlayer={this.props.togglePlayer}
-          recentChip={this.props.board.recentChip}
-          changeRecentChip={this.props.changeRecentChip}
-          colTracker={this.props.board.colTracker}
-          incrementColIndex={this.props.incrementColIndex}
-          currentPlayer={this.props.board.currentPlayer}
-          dropChip={this.props.dropChip}
-          incrementChipCount={this.props.incrementChipCount}
-          results={this.props.board.results}
-          addResults={this.props.addResults}
-        />
+        <div className="boardContainer">
+          <Board
+            board={this.props.board.board}
+            chipCount={this.props.board.chipCount}
+            togglePlayer={this.props.togglePlayer}
+            recentChip={this.props.board.recentChip}
+            changeRecentChip={this.props.changeRecentChip}
+            colTracker={this.props.board.colTracker}
+            incrementColIndex={this.props.incrementColIndex}
+            currentPlayer={this.props.board.currentPlayer}
+            dropChip={this.props.dropChip}
+            incrementChipCount={this.props.incrementChipCount}
+            results={this.props.board.results}
+            addResults={this.props.addResults}
+          />
+        </div>
       </div>
     );
   }
