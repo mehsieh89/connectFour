@@ -29,10 +29,10 @@ class ResultsDialog extends Component {
     let winnerCheck = () => {
       if (this.props.results === "firstPlayer") {
         return this.props.firstPlayer;
+      } else if (this.props.results === "secondPlayer"){
+        return this.props.secondPlayer;
       } else if (this.props.chipCount === 42){
         return "Draw! No one "
-      } else {
-        return this.props.secondPlayer;
       }
     }
     return (
