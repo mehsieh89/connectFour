@@ -49,7 +49,9 @@ export default function(state = initialState, action) {
     return newState5;
 
   case 'INCREMENT_CHIP_COUNT':
-    return Object.assign({}, state, { chipCount: state.chipCount++});
+    let newState7 = Object.assign({}, state);
+    newState7.chipCount++;
+    return newState7;
 
   case 'TOGGLE_PLAYER':
     return Object.assign({}, state, { currentPlayer: !state.currentPlayer});

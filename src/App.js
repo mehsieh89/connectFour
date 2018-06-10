@@ -52,11 +52,12 @@ class App extends Component {
 
   render() {
     const resultsCheck = () => {
-      if (this.props.board.results !== null) {
+      if (this.props.board.results !== null || this.props.board.chipCount === 42) {
         return  (<ResultsDialog
                   results={this.props.board.results}
                   firstPlayer={this.props.board.firstPlayer}
                   secondPlayer={this.props.board.secondPlayer}
+                  chipCount={this.props.board.chipCount}
                 />)
       } else {
         return null;
@@ -124,7 +125,6 @@ class App extends Component {
           currentPlayer={this.props.board.currentPlayer}
           dropChip={this.props.dropChip}
           incrementChipCount={this.props.incrementChipCount}
-
           results={this.props.board.results}
           addResults={this.props.addResults}
         />

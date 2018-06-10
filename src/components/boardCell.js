@@ -42,6 +42,7 @@ class BoardCell extends Component {
       if (!this.handleResultsCheck()) {
         this.props.togglePlayer();
       }
+      this.props.incrementChipCount();
     } else {
       this.props.changeRecentChip();
       alert('invalid move!');
