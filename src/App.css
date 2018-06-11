@@ -52,6 +52,7 @@
   width: 100px;
   float: left;
   text-align: center;
+  cursor: pointer;
 }
 
 .boardContainer {
