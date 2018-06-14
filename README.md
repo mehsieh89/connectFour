@@ -6,7 +6,7 @@ Simple Connect Four game! Click columns to drop down chips. Players are prompted
 
 <img src="https://i.imgur.com/LuILLDj.png" width="480px">
 
-## Techonologies
+## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 - ReactJS - [ReactJS](https://reactjs.org/)
 - Redux - [Redux](https://redux.js.org/)
