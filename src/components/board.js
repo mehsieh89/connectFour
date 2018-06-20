@@ -13,17 +13,17 @@ class Board extends Component {
       yellow: 0
     };
     for (let k = 0; k < row.length; k++) {
-      if (row[k] === "red") {
+      if (row[k] === `red`) {
         tracker.red++;
         tracker.yellow = 0;
         if (tracker.red === 4) {
-          return "firstPlayer";
+          return `firstPlayer`;
         }
-      } else if (row[k] === "yellow"){
+      } else if (row[k] === `yellow`){
         tracker.yellow++;
         tracker.red = 0;
         if (tracker.yellow === 4) {
-          return "secondPlayer";
+          return `secondPlayer`;
         }
       } else if (row[k] === null) {
         tracker.yellow = 0;
@@ -49,17 +49,17 @@ class Board extends Component {
         yellow: 0
       };
       for (let i = 0; i < board.length; i++) {
-        if (board[i][columnIndex] === "red") {
+        if (board[i][columnIndex] === `red`) {
           tracker.red++;
           tracker.yellow = 0;
           if (tracker.red === 4) {
-            return "firstPlayer";
+            return `firstPlayer`;
           }
-        } else if (board[i][columnIndex] === "yellow") {
+        } else if (board[i][columnIndex] === `yellow`) {
           tracker.yellow++;
           tracker.red = 0;
           if (tracker.yellow === 4) {
-            return "secondPlayer";
+            return `secondPlayer`;
           }
         } else if (board[i][columnIndex] === null) {
           tracker.yellow = 0;

@@ -27,12 +27,12 @@ class ResultsDialog extends Component {
 
   render() {
     let winnerCheck = () => {
-      if (this.props.results === "firstPlayer") {
+      if (this.props.results === `firstPlayer`) {
         return this.props.firstPlayer;
-      } else if (this.props.results === "secondPlayer"){
+      } else if (this.props.results === `secondPlayer`){
         return this.props.secondPlayer;
       } else if (this.props.chipCount === 42){
-        return "Draw! No one "
+        return `Draw! No one `
       }
     }
     return (
@@ -43,7 +43,7 @@ class ResultsDialog extends Component {
         <DialogTitle id="form-dialog-title">Results</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            {winnerCheck() + " is the winner"}
+            {`${winnerCheck()} is the winner`}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
