@@ -5,6 +5,9 @@
 Simple Connect Four game! Click columns to drop down chips. Players are prompted for names and will alternate turns! Results Dialog will show up when a winning chip is dropped or the game is a draw. Enjoy!
 
 <img src="https://i.imgur.com/LuILLDj.png" width="480px">
+<br/>
+<img src="https://thumbs.gfycat.com/SingleMiniatureElephant-size_restricted.gif" width="480px">
+
 
 ## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
